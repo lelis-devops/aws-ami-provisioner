@@ -4,7 +4,7 @@ create_users () {
 
 declare -A user
 
-user[name]=Dev1
+user[name]="Dev1"
 user[password]="D@ni55cssmile22"
 echo "User for people: ${user[name]}"
 echo "User for password: ${user[password]}"

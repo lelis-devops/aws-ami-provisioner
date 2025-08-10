@@ -10,7 +10,7 @@ echo "User for people: ${user[name]}"
 echo "User for password: ${user[password]}"
 echo "Keys for array: ${!user[@]}"
 
-aws iam create-user --user-name "${user[name]}"
+aws iam create-user --user -name "${user[name]}"
 
 aws iam create-login --user "${user[name]}" --pasword "${user[password]}" --password-reset-required
 

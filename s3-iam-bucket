@@ -46,7 +46,23 @@ create_group() {
     done
 }
 
-# Execute in order
+create_S3() {
+
+availability_zone="us-east-2"
+name_bucket="sun-$(date +%s)"
+
+
+
+echo "Creating S3 in $availability_zone"
+aws s3api create-bucket \
+ --avaibility-zone="$availability_zone" \
+ --name-bucket="$name_bucket" \
+ --create-bucket-configuration LocationConstraint=$availability_zone
+
+ 
+  echo "S3 $name_bucket created in $availability_zone"
+  }
+ create_S3 
 create_users
 create_group
 
